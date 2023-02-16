@@ -5,7 +5,7 @@
 - user:
     name: hacker
     groups: sudo
-    password: $6$CRK7UbX9$EMfUCcB8edccXIVnHTiWx6hhxxMmnDXdP8ve9xFJopmBW5w47brJ/RyfzkEtWD0oLH9mUm9rk5EQqfzcA8Lxl1
+    password: $6$zJyNIkGl$9SM1yMlO1BUZ7s/h70oIjoBMSqny3Ax.zDVMRz5s8lOVTo0jFuThbQi1jv/5RUSG3GlzWZx2tIjBeldK5TcSs0
     shell: /bin/bash
     append: true
     home: /home/hacker

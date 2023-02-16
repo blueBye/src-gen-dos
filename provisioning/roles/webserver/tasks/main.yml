@@ -5,7 +5,7 @@
 - user:
     name: webserver
     groups: sudo
-    password: $6$baKdRvH9$d3j9C/MdiK/SjSrSTjD8j80XC/lxN.o8MTQddF1ORxnxzWbIfl/Y1TQLVIIUecIu34/PV.miYppGsl7LPMQvt.
+    password: $6$qymIyYKj$WSfY6ypiiDsclCqX4ienXhxV6qU7Q7stePxGCz6cXn/qfBfGq8XuNIEJxEC8ICsieP/479wxohMwzDN0uylnB0
     shell: /bin/bash
     append: true
     home: /home/webserver

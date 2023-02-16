@@ -25,4 +25,12 @@
       kypo_user_access_password: kypo
     include_role:
       name: kypo-user-access
+  - name: ''
+    hosts:
+    - webserver
+    - hacker
+    tasks:
+      include_role:
+        name: '{{ inventory_hostname }}'
+    become: true
   become: true
