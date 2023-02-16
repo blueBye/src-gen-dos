@@ -21,9 +21,6 @@ routers:
     mgmt_protocol: ssh
     image: debian-9-x86_64
     mgmt_user: debian
-wan:
-  name: internet-connection
-  cidr: 100.100.100.0/24
 networks:
 - name: internal
   cidr: 192.168.20.0/24
@@ -38,5 +35,5 @@ net_mappings:
 router_mappings:
 - router: router1
   network: internal
-  ip: 192.168.20.2
+  ip: 192.168.20.1
 groups: []
