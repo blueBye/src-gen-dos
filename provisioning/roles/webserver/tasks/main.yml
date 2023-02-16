@@ -1,0 +1,23 @@
+---
+- group:
+    name: sudo
+    state: present
+- user:
+    name: webserver
+    groups: sudo
+    password: $6$baKdRvH9$d3j9C/MdiK/SjSrSTjD8j80XC/lxN.o8MTQddF1ORxnxzWbIfl/Y1TQLVIIUecIu34/PV.miYppGsl7LPMQvt.
+    shell: /bin/bash
+    append: true
+    home: /home/webserver
+- copy:
+    owner: webserver
+    mode: '755'
+    dest: /var/www/html/index.html
+    src: ./files/index.html
+- apt:
+    name: nginx
+    state: present
+    update_cache: true
+- service:
+    name: nginx
+    state: reloaded

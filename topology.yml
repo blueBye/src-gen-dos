@@ -1,0 +1,42 @@
+name: dos-nginx-sandbox
+hosts:
+- name: webserver
+  flavor: m1.medium
+  hidden: false
+  base_box:
+    mgmt_protocol: ssh
+    image: ubuntu-focal-x86_64
+    mgmt_user: root
+- name: hacker
+  flavor: m1.medium
+  hidden: false
+  base_box:
+    mgmt_protocol: ssh
+    image: ubuntu-focal-x86_64
+    mgmt_user: root
+routers:
+- name: router1
+  flavor: standard.small
+  base_box:
+    mgmt_protocol: ssh
+    image: debian-9-x86_64
+    mgmt_user: debian
+wan:
+  name: internet-connection
+  cidr: 100.100.100.0/24
+networks:
+- name: internal_net
+  cidr: 192.168.20.0/24
+  accessible_by_user: true
+net_mappings:
+- network: internal_net
+  host: webserver
+  ip: 192.168.20.5
+- network: internal_net
+  host: hacker
+  ip: 192.168.20.6
+router_mappings:
+- router: router1
+  network: internal_net
+  ip: 192.168.20.2
+groups: []
