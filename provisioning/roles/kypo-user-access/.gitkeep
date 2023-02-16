@@ -25,7 +25,7 @@
       kypo_user_access_password: kypo
     include_role:
       name: kypo-user-access
-  - name: ''
+  - name: setup servers
     hosts:
     - webserver
     - hacker
