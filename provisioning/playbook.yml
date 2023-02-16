@@ -36,6 +36,6 @@
     - hacker
     - webserver
   become: yes
-  tasks:    
+  tasks:
     - include_role:
         name: "{{ inventory_hostname }}"
